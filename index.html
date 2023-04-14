@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registration</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="main__item">
+        <h2 class="main__item-title">У вас уже есть аккаунт?</h2>
+        <button class="main__item-btn signin-btn">Войти</button>
+      </div>
+      <div class="main__item">
+        <h2 class="main__item-title">У вас нет аккаунта?</h2>
+        <button class="main__item-btn signup-btn">Зарегистрироваться</button>
+      </div>
+      <div class="main__form">
+        <!-- FORM SIGNIN -->
+        <form action="#" class="form form-signin">
+          <h3 class="form__title">Вход</h3>
+          <input type="text" name="login" class="form__input signin-input login-signin" placeholder="Логин">
+          <input type="password" name="password" class="form__input signin-input password-signin" placeholder="Пароль">
+          <button type="submit"class="form__btn form__btn-signin">Войти</button>
+          <a href="#" class="form__forgot">Восстановить пароль</a>
+        </form>
+        <!-- FORM SIGNUP -->
+        <form action="#" class="form form-signup">
+          <h3 class="form__title">Регистрация</h3>
+          <input type="text" name="login" class="form__input signup-input login-signup" placeholder="Логин">
+          <input type="email" name="email" class="form__input signup-input email-signup" placeholder="Email">
+          <input type="password" name="password" class="form__input signup-input password-signup" placeholder="Пароль">
+          <input type="password" name="repeat" class="form__input signup-input repeat-signup" placeholder="Подтвердите пароль">
+          <button type="submit" class="form__btn form__btn-signup">Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="page">
+    <div class="page__wrapper">
+      <h3 class="page__wrapper-title page-authorization">Авторизация завершена</h3>
+      <h3 class="page__wrapper-title page-registration">Регистрация завершена</h3>
+      <button class="page__wrapper-btn">Вернуться</button>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
