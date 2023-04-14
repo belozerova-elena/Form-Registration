@@ -1,0 +1,242 @@
+@import "variables";
+@import "normalize";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: $poppins;
+  font-size: 16px;
+  color: $black;
+  background-color: $black;
+}
+.container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  padding: 40px 0;
+}
+// MEDIA MAX-WIDTH:992px
+@media (max-width: 992px) {
+  .container {
+    max-width: 400px;
+    height: 650px;
+    padding: 0;
+    margin: 0 25px;
+  }
+}
+// MEDIA MAX-WIDTH:460px
+@media (max-width: 460px) {
+  .container {
+    margin: 0 15px;
+  }
+}
+// MAIN 
+.main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.2);
+  &__item {
+    width: 50%;
+    text-align: center;
+  }
+  &__item-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $white;
+  }
+  &__item-btn {
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $black;
+    background-color: $white;
+    transition: all 0.4s ease;
+    &:hover {
+      box-shadow: 5px 8px 5px rgba(240, 237, 237, 0.4);
+    }
+  }
+  &__form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: $white;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    &.active {
+      left: 50%;
+      .form-signin {
+        left: -100%;
+        transition-delay: 0s;
+      }
+      .form-signup {
+        left: 0;
+        transition-delay: 0.25s;
+      }
+    }
+  }
+}
+// MEDIA MAX-WIDTH:992px
+@media (max-width: 992px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__item {
+      width: 100%;
+      padding: 30px 0;
+    }
+    &__form {
+      top: 0;
+      width: 100%;
+      height: 500px;
+      box-shadow: none;
+      &.active {
+        top: 150px;
+        left: 0;
+      }
+    }
+  }
+}
+// FORM
+.form {
+  position: absolute;
+  width: 100%;
+  padding: 50px;
+  transition: 0.5s;
+  &__title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  &__input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: inherit;
+    border: 1px solid $black;
+  }
+  &__btn {
+    margin-bottom: 20px;
+    padding: 10px 50px;
+    font-size: inherit;
+    color: $white;
+    background-color: $black;
+    transition: background-color 0.4s ease;
+  }
+  &__forgot {
+    display: block;
+    width: 100%;
+    color: $black;
+    transition: color 0.4s ease;
+    &:hover {
+      color: $blue;
+    }
+  }
+  &__btn-signin {
+    &:hover {
+      background-color: $blue;
+    }
+  }
+  &__btn-signup {
+    &:hover {
+      background-color: $red;
+    }
+  }
+}
+.form-signin {
+  left: 0;
+  transition-delay: 0.25s;
+}
+.form-signup {
+  left: 100%;
+  transition-delay: 0s;
+}
+// MEDIA MAX-WIDTH:460px
+@media (max-width: 460px) {
+  .form {
+    padding: 20px;
+  }
+}
+// MEDIA MAX-WIDTH:330px
+@media (max-width: 330px) {
+  .form__btn-signup {
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+  }
+}
+// ERROR
+.signin-input.error {
+  box-shadow: 0 0 10px $blue;
+}
+.signup-input.error {
+  box-shadow: 0 0 10px $red;
+}
+// PAGE
+.page {
+  position: absolute;
+  left: -100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  transition-delay: 0s;
+  transition: all 0.8s ease-in-out;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    padding: 0 15px;
+    background-color: $white;
+  }
+  &__wrapper-title {
+    display: none;
+    margin-bottom: 20px;
+    font-size: 34px;
+    font-weight: 500;
+    text-align: center;
+    color: $black;
+  }
+  &__wrapper-btn {
+    padding: 10px 50px;
+    font-size: 20px;
+    color: $white;
+    background-color: $black;
+    transition: background-color 0.4s ease;
+    &:hover {
+        background-color: $gray;
+    }
+  }
+}
+.page.active {
+  left: 0;
+}
+.page-authorization.active {
+  display: block;
+}
+.page-registration.active {
+  display: block;
+}
+// MEDIA MAX-WIDTH:460px
+@media (max-width: 460px) {
+  .page__wrapper-title {
+    font-size: 30px;
+  }
+}
